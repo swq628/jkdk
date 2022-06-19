@@ -59,3 +59,5 @@ jobs:
           position: ${{ secrets.position }}
 
         run: python main.py
+        
+        
