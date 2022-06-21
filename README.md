@@ -62,21 +62,23 @@
         |   5    | 已接种第3针      |
   - **经度**: name是jingdu，填入你所期望的位置的经度即可，可以在网上查找
   - **纬度**： name是weidu，如上同理。*
-  - **微信通知**：name是key，值见最下面。
-
-4. 然后在左边的找到actions，选择enable action，这样就激活了action
-5. 结束。接下来会每日6点、6点10分和7点、7点10分自动打卡（多次打卡防止打卡失败）。不过这里**第一次**建议自己修改 .github/workflows 里面的 jkdk.yml 里的时间以进行一次打卡看看效果（有时候会因为网络问题打卡失败，不过因为设置了**多次打卡**的缘故，失败的几率会降低），注意修改为**UTC时间**，即比北京时间晚8个小时，具体可以参考有北京时间注释的那一行。
-6. __**注意**__，如果GitHub action激活不了，则需要编辑一下.github/workflows 里面的 jkdk.yml文件，随便编辑一下即可，然后提交，action就可以被激活。
-
----
-
-## 添加微信通知的方法
-
-### 原先微信接口已经失效，替换为新的微信接口
-
-### 使用方法
-
+  - **微信通知**：name是key，
 1. 扫描此微信二维码并关注微信公众号
 [二维码](http://wxpusher.zjiecode.com/api/qrcode/hNHQXsGvGguORhwBHItWlaqUYvs79Ii59RpFN5YmuDIBOiO8YLQlqHd051TBfmeO.jpg)
 
 2. 关注后在右下角”我的“这一栏中把UID替换到原先secrets中的微信key(**name是key，值即得到的uid**)中即可，除此之外，关注后会有消息通知uid的值。
+
+
+4. 然后在左边的找到actions，选择enable action，这样就激活了action
+
+![actions位置](./images/actions.png)
+
+5. 结束。接下来会每日6点、6点10分和7点、7点10分自动打卡（多次打卡防止打卡失败）。不过这里**第一次**建议自己修改 .github/workflows 里面的 jkdk.yml 里的时间以进行一次打卡看看效果（有时候会因为网络问题打卡失败，不过因为设置了**多次打卡**的缘故，失败的几率会降低），注意修改为**UTC时间**，即比北京时间晚8个小时，具体可以参考有北京时间注释的那一行。
+
+6. __**注意**__，如果GitHub action激活不了，则需要编辑一下.github/workflows 里面的 jkdk.yml文件，输入几个空格或者回车即可，然后提交，action就可以被激活。
+
+7. 最终的结果
+   ![actions结果](./images/result.png)
+
+8. 每日打卡成功后的提醒
+   <img src="./images/clock.png" alt="微信提醒" style="zoom:67%;" />
